@@ -1,0 +1,84 @@
+<!--HTML
+<div class="container" style="margin-bottom: 28px;">
+<div class="container py-3 my-1" *ngFor="let vehiculo of Vehiculos">
+  <div class="card mb-3" style="max-width: 540px; border: 0px solid">
+    <div class="row g-0" style="border: 1px solid gray; border-radius: 5px;">
+      <div class="col-md-4" >
+        <p>{{vehiculo.marca}}</p>
+        <p>MUNDO</p>
+        <p>DE LE PROGRAMACION</p>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            <div class="form-group">
+                <label>Servicios</label>
+                <div class="form-control">
+                    <label style="margin-right: 5px">
+                        <input type="radio" value="male" name="{{vehiculo.id_vehiculo}}" (click)="mostrar(vehiculo.id_vehiculo)">
+                        FULL
+                    </label>
+                    <label style="margin-right: 5px">
+                        <input type="radio" value="male" name="{{vehiculo.id_vehiculo}}" (click)="mostrar(vehiculo.id_vehiculo)">
+                        ECO
+                    </label>
+                    <label py-3>
+                        <input type="radio" value="male" name="{{vehiculo.id_vehiculo}}" (click)="mostrar(vehiculo.id_vehiculo)">
+                        SEMI
+                    </label>
+                </div>
+                <p id="{{vehiculo.id_vehiculo}}"></p>
+                <div [ngSwitch]="n"> 
+                <p *ngSwitchCase="0">Seleccione un servicio</p>
+                <p *ngSwitchCase="1"> Servicio 1</p>
+                <p *ngSwitchCase="2"> Servicio 2</p>
+                <p *ngSwitchCase="3">Servicio 3</p>
+                <p *ngSwitchDefault>Valor por defecto</p>
+                </div>
+        
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<input type="submit">
+</div>-->
+<div class="container my-3">
+  <h4>Listado De Vehiculos</h4> 
+</div>
+<div class="container my-3 py-3">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">MARCA</th>
+        <th scope="col">MODELO</th>
+        <th scope="col">COLOR</th>
+        <th scope="col">CHAPA</th>
+        <th scope="col">ACCION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of Vehiculos">
+        <td>{{vehiculo.id_vehiculo}}</td>
+        <td>{{vehiculo.marca}}</td>
+        <td>{{vehiculo.modelo}}</td>
+        <td>{{vehiculo.color}}</td>
+        <td>{{vehiculo.chapa}}</td>
+        <td>
+            <a href="/pedido/{{vehiculo.id_vehiculo}}">Pedir</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+

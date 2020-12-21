@@ -1,0 +1,74 @@
+<div class="container my-3"><H3>Realizar Pedido</H3></div>
+<div class="container my-3" style="border: 2px solid #343a40; border-radius: 5px; background: #f5f5f5;">
+        
+  <div class="container my-3">
+    <div class="alert alert-danger" role="alert">
+      Seleccione todos los items
+    </div>
+  </div>
+  
+        <div class="form-group">
+        <label class="radio-inline my-3">
+        <input type="radio" name="usuario" [(ngModel)]="pedido.id_usuario"  value="{{vehicle.id_usuario}}"><b> ID_USUARIO:</b> {{vehicle.id_usuario}}
+        </label>
+        </div>
+        <div class="form-group">
+        <label class="radio-inline my-3">
+        <input type="radio" name="vehiculo" [(ngModel)]="pedido.id_vehiculo" value="{{vehicle.id_vehiculo}}"><b> ID_vehiculo:</b> {{vehicle.id_vehiculo}}
+        </label>
+        </div>
+        <!--Prueba-->
+        <input type="hidden" #cat value="{{vehicle.id_categoria}}">
+        <!--Prueba-->
+        <div class="form-group">
+          <label class="radio-inline my-3">
+            <input  [(ngModel)]="pedido.id_servicio" type="radio" name="optradio" (click)="descripcion(1,cat.value)" value="1" style="margin: 5px;"><b>FULL</b>
+          </label>
+          <label class="radio-inline">
+            <input  [(ngModel)]="pedido.id_servicio" type="radio" name="optradio"  (click)="descripcion(2,cat.value)" value="2" style="margin: 5px;"><b>EXTERIOR+</b>
+          </label>
+          <label class="radio-inline">
+            <input  [(ngModel)]="pedido.id_servicio" type="radio" name="optradio"  (click)="descripcion(3,cat.value)" value="3" style="margin: 5px;"><b>Exterior Eco</b>
+          </label>
+          <label class="radio-inline">
+            <input  [(ngModel)]="pedido.id_servicio" type="radio" name="optradio"  (click)="descripcion(4,cat.value)" value="4" style="margin: 5px;"><b>SEMI+</b>
+          </label>
+          <label class="radio-inline">
+            <input  [(ngModel)]="pedido.id_servicio" type="radio" name="optradio"  (click)="descripcion(5,cat.value)" value="5" style="margin: 5px;"><b>INTERIOR</b>
+          </label>
+          <P id="servicio"> </P>
+          </div>
+          
+        <!--</div>-->
+        <div class="form-group">
+        <label class="radio-inline my-3">
+        <input type="radio" name="precio" [(ngModel)]="pedido.monto" value="{{price}}"><b> Precio:</b> {{price}}
+        </label>
+        </div>
+        <div  class="container py-3" style="border: 2px solid #343a40; border-radius: 5px;"><!--Datos del cliente-->
+          <h4>Datos del Cliente</h4>
+          <div class="form-group">
+            <label for="">NOMBRES</label>
+            <input [(ngModel)]="factura.nombre" type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="">APELLIDOS</label>
+            <input [(ngModel)]="factura.apellido" type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="">DIRECCION</label>
+            <input [(ngModel)]="factura.direccion" type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="">RUC o CI</label>
+            <input [(ngModel)]="factura.numero_documento" type="text" class="form-control">
+          </div>
+
+
+        </div>
+          <button type="button" class="btn btn-primary my-3" (click)="savePedido()">Realizar Pedido</button>
+     
+</div><!--Container-->

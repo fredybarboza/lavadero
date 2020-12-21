@@ -1,0 +1,59 @@
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Pedido</th>
+        <th scope="col">Empleados disponibles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+            <div class="container my-3">
+            <h4>ID_PEDIDO</h4>
+            <input type="text" [(ngModel)]="Pedido.id" readonly><br>
+            </div>
+            <div class="container my-3">
+                <h4>ID_USUARIO</h4>
+            <input type="text" [(ngModel)]="Pedido.id_usuario" readonly><br>
+            </div>
+            <div class="container my-3">
+                <h4>ID_VEHICULO</h4>
+            <input type="text" [(ngModel)]="Pedido.id_vehiculo" readonly><br>
+            </div>
+            <div class="container my-3">
+                <h4>ID_SERVICIO</h4>
+            <input type="text" [(ngModel)]="Pedido.id_servicio" readonly><br>
+            </div>
+            <div class="container my-3">
+                <h4>ID_EMPLEADO</h4>
+            <input type="text" [(ngModel)]="Pedido.id_empleado_encargado"><br>
+            </div>
+            <button (click)="updatePedido()">Guardar</button>
+        </td>
+        <td>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID_EMPLEADO</th>
+                <th scope="col">CI</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">APELLIDO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let empleado of Empleados">
+                <td>{{empleado.id}}</td>
+                <td>{{empleado.ci}}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.apellido}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
