@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from '../interfaces/vehiculo';
 import { VehiculosService } from '../services/vehiculos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehiculo',
@@ -17,7 +18,7 @@ export class VehiculoComponent implements OnInit {
     color: null,
     chapa: null
   }
-  constructor(private vehiculoService: VehiculosService) { }
+  constructor(private vehiculoService: VehiculosService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,9 +27,10 @@ export class VehiculoComponent implements OnInit {
     this.vehiculoService.save(this.vehiculo).subscribe(data => {
       alert('Vehiculo Guardado'),
       console.log(data);
+      this.router.navigate(['formulario']);
     },error => {
       console.log(error);
-      alert('Ocurrio un error')});
+      alert('INGRESE TODOS LOS DATOS')});
   
    }
 

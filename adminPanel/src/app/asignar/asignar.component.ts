@@ -4,6 +4,7 @@ import { Pedido } from '../interfaces/pedido';
 import { PedidoService } from '../services/pedido.service';
 import { Empleado } from '../interfaces/empleado';
 import { EmpleadoService } from '../services/empleado.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-asignar',
@@ -28,7 +29,7 @@ export class AsignarComponent implements OnInit {
   id: any;
   editing: boolean=false;
   Pedidos: Pedido[];
-  constructor(private activatedRoute: ActivatedRoute, private pedidosService: PedidoService, private empleadoService: EmpleadoService) {
+  constructor(private activatedRoute: ActivatedRoute, private pedidosService: PedidoService, private empleadoService: EmpleadoService, private router: Router) {
     this.getEmpleadosDisponibles();
     this.id=this.activatedRoute.snapshot.params['id'];
     if(this.id){
@@ -52,6 +53,7 @@ export class AsignarComponent implements OnInit {
     this.pedidosService.put(this.Pedido).subscribe(data => {
       alert('Pedido actualizado'),
       console.log(data);
+      this.router.navigate(['/']);
     },error => {
       console.log(error);
       alert('Ocurrio un error');

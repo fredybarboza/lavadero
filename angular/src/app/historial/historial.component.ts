@@ -26,8 +26,9 @@ export class HistorialComponent implements OnInit {
       this.Pedidos=data;
     });
   }
-
+  show: boolean=true;
   mostrarFactura(id){
+    this.show=false;
     this.mostrar=true;
     this.facturaService.getFacturas(id).subscribe((data: Factura[])=>{
       this.Facturas=data;

@@ -2,7 +2,7 @@
 <table>
   <thead>
     <tr>
-      <th>Finalizados</th>
+      <th>PEDIDOS FINALIZADOS</th>
       <th>Factura</th>
     </tr>
   </thead>
@@ -35,7 +35,11 @@
       </div>
       
       </td>
+      <div *ngIf="show;" class="alert alert-primary" role="alert">
+        Click en <b>Ver Factura</b> para visualizar
+      </div>
       <td *ngFor="let factura of Facturas"><!--FACTURA-->
+       
         
        <div *ngIf="mostrar;" class="container" style="border: 1px solid black; border-radius: 5px;">
        <h4>Lavadero.com | N° {{factura.id}}</h4>

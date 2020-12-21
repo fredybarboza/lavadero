@@ -10,26 +10,29 @@
       <tr>
         <td>
             <div class="container my-3">
-            <h4>ID_PEDIDO</h4>
-            <input type="text" [(ngModel)]="Pedido.id" readonly><br>
+            <b>ID_PEDIDO: </b>
+            <input type="text" [(ngModel)]="Pedido.id" readonly style="border: 0px solid white"><br>
             </div>
             <div class="container my-3">
-                <h4>ID_USUARIO</h4>
-            <input type="text" [(ngModel)]="Pedido.id_usuario" readonly><br>
+            <b>ID_USUARIO: </b>
+            <input type="text" [(ngModel)]="Pedido.id_usuario" readonly style="border: 0px solid white"><br>
             </div>
             <div class="container my-3">
-                <h4>ID_VEHICULO</h4>
-            <input type="text" [(ngModel)]="Pedido.id_vehiculo" readonly><br>
+            <b>ID_VEHICULO: </b>
+            <input type="text" [(ngModel)]="Pedido.id_vehiculo" readonly style="border: 0px solid white"><br>
             </div>
             <div class="container my-3">
-                <h4>ID_SERVICIO</h4>
-            <input type="text" [(ngModel)]="Pedido.id_servicio" readonly><br>
+                <b>SERVICIO:    </b>
+            <input type="text" [(ngModel)]="Pedido.id_servicio" readonly style="border: 0px solid white"><br>
+            </div>
+            <div class="alert alert-light" role="alert">
+              Ingrese el ID de un empleado disponible
             </div>
             <div class="container my-3">
-                <h4>ID_EMPLEADO</h4>
+                <b>ID_EMPLEADO: </b>
             <input type="text" [(ngModel)]="Pedido.id_empleado_encargado"><br>
             </div>
-            <button (click)="updatePedido()">Guardar</button>
+            <button type="button" class="btn btn-primary" (click)="updatePedido()">Aceptar Pedido</button>
         </td>
         <td>
           <table class="table">
