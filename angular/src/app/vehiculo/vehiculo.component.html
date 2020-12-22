@@ -1,0 +1,70 @@
+<div class="container my-3">
+    <div>
+      <h5>Agregar nuevo vehiculo</h5>
+      <hr>
+        <div class="form-group">
+          <label for="nombre">ID_USUARIO</label><br>
+          <small class="text-muted">Ingrese su ID</small>
+          <input [(ngModel)]="vehiculo.id_usuario" type="text" class="form-control">
+          
+        </div>
+        <div class="form-group">
+          <label for="apellido">MARCA</label><br>
+          <small class="text-muted">Ingrese la marca de su vehiculo</small>
+          <input [(ngModel)]="vehiculo.marca" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="edad">MODELO</label><br>
+          <small class="text-muted">Ingrese el modelo de su vehiculo</small>
+          <input [(ngModel)]="vehiculo.modelo" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="edad">COLOR</label><br>
+          <small class="text-muted">Ingrese el color de su vehiculo</small>
+          <input [(ngModel)]="vehiculo.color" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="edad">CHAPA</label><br>
+          <small class="text-muted">Ingrese la chapa de su vehiculo</small>
+          <input [(ngModel)]="vehiculo.chapa" type="text" class="form-control">
+        </div>
+        <small class="text-muted">Seleccione la categoria de su vehiculo</small><br>
+        <div class="form-check form-check-inline"><!--Radio-->
+          
+          <label class="form-check-label">
+            <input [(ngModel)]="vehiculo.id_categoria" class="form-check-input" type="radio" value="1">
+            Automóvil
+          </label>
+        </div>
+        <div class="form-check form-check-inline"><!--Radio-->
+          <label class="form-check-label">
+            <input [(ngModel)]="vehiculo.id_categoria" class="form-check-input" type="radio" value="2">
+            Camioneta
+          </label>
+        </div>
+        <div class="form-check form-check-inline"><!--Radio-->
+          <label class="form-check-label">
+            <input [(ngModel)]="vehiculo.id_categoria" class="form-check-input" type="radio" value="3">
+            Motocicleta
+          </label>
+        </div>
+        <div class="form-check form-check-inline"><!--Radio-->
+          <label class="form-check-label">
+            <input [(ngModel)]="vehiculo.id_categoria" class="form-check-input" type="radio" value="4">
+            Maquinaria Agricola
+          </label>
+        </div>
+        <div class="form-check form-check-inline"><!--Radio-->
+          <label class="form-check-label">
+            <input [(ngModel)]="vehiculo.id_categoria" class="form-check-input" type="radio" value="5">
+            Camion de Carga o Pasajeros
+          </label>
+        </div>
+        <br>
+        <button  (click)="saveVehiculo()" class="btn btn-primary my-3">Guardar</button>
+      </div>
+      
+     
+     
+</div>
+<br>

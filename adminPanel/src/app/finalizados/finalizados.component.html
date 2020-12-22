@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="table">
+    <thead>
+      <tr>
+        <th>Pedidos</th>
+        <th>Factura</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><!--Listado de Pedidos-->
+          <div class="container">
+            <h3>Pedidos Finalizados</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ID_Pedido</th>
+                  <th scope="col">id_usuario</th>
+                  <th scope="col">id_servicio</th>
+                  <th scope="col">monto</th>
+                  <th scope="col">Facturas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pedido of Pedidos">
+                  <td>{{pedido.id}}</td>
+                  <td>{{pedido.id_usuario}}</td>
+                  <td>{{pedido.id_servicio}}</td>
+                  <td>{{pedido.monto}}</td>
+                  <td><div class="btn btn-primary" (click)="mostrarFactura(pedido.id)">Ver Factura</div></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        
+        </td>
+        <div *ngIf="show;" class="alert alert-primary my-3" role="alert">
+          Presiona <b>Ver Factura</b> para visualizar la factura del pedido
+        </div>
+        <td *ngFor="let factura of Facturas"><!--Facturas-->
+          <div *ngIf="mostrar;" class="container" style="border: 1px solid black; border-radius: 5px;">
+            <h4>Lavadero.com | N° {{factura.id}}</h4>
+            Coronel Bogado-Itapúa-Paraguay
+            <hr>
+            Apellidos: {{factura.apellido}} <br>
+            Nombres: {{factura.nombre}} <br>
+            CI-RUC: {{factura.numero_documento}} <br>
+            Direccion: {{factura.direccion}} <br>
+            <hr>
+            <table>
+              <thead>
+                <tr>
+                  <th>Servicio</th>
+                  <th>Monto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{factura.servicio}}</td>
+                  <td>{{factura.monto}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+            TOTAL------------------------------------------GS. {{factura.monto}}
+            <hr>
+            <b>Lavadero.com</b>| lavadero@gmail.com | +59598 553 234
+            
+           </div>
+        </td>
+      </tr>
+    </tbody>
+  </div>
+</div>
+
+<!--Listado de pedidos-->
