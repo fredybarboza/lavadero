@@ -1,0 +1,51 @@
+<!--PEDIDOS EN ESPERA-->
+<div class="container my-3">
+    <h3>Pedidos en espera</h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID_Pedido</th>
+            <th scope="col">id_usuario</th>
+            <th scope="col">id_servicio</th>
+            <th scope="col">monto</th>
+            <th scope="col">ACCION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of Pedidos">
+            <td>{{pedido.id}}</td>
+            <td>{{pedido.id_usuario}}</td>
+            <td>{{pedido.id_servicio}}</td>
+            <td>{{pedido.monto}}</td>
+            <td><a href="/asignar-aceptar/{{pedido.id}}">Asignar/Aceptar</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<!--PEDIDOAS EN EJECUCION-->
+<div class="container">
+  <h3>Pedidos en Ejecucion</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID_Pedido</th>
+        <th scope="col">id_usuario</th>
+        <th scope="col">id_servicio</th>
+        <th scope="col">monto</th>
+        <th scope="col">ACCION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let aprobado of Aprobados">
+        <td>{{aprobado.id}}</td>
+        <td>{{aprobado.id_usuario}}</td>
+        <td>{{aprobado.id_servicio}}</td>
+        <td>{{aprobado.monto}}</td>
+        <input type="hidden" #id value="{{aprobado.id}}">
+        <td><button type="button" (click)="finalizar(id.value)" class="btn btn-primary">
+          Finalizar
+        </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

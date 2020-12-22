@@ -1,0 +1,62 @@
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Pedido</th>
+        <th scope="col">Empleados disponibles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+            <div class="container my-3">
+            <b>ID_PEDIDO: </b>
+            <input type="text" [(ngModel)]="Pedido.id" readonly style="border: 0px solid white"><br>
+            </div>
+            <div class="container my-3">
+            <b>ID_USUARIO: </b>
+            <input type="text" [(ngModel)]="Pedido.id_usuario" readonly style="border: 0px solid white"><br>
+            </div>
+            <div class="container my-3">
+            <b>ID_VEHICULO: </b>
+            <input type="text" [(ngModel)]="Pedido.id_vehiculo" readonly style="border: 0px solid white"><br>
+            </div>
+            <div class="container my-3">
+                <b>SERVICIO:    </b>
+            <input type="text" [(ngModel)]="Pedido.id_servicio" readonly style="border: 0px solid white"><br>
+            </div>
+            <div class="alert alert-light" role="alert">
+              Ingrese el ID de un empleado disponible
+            </div>
+            <div class="container my-3">
+                <b>ID_EMPLEADO: </b>
+            <input type="text" [(ngModel)]="Pedido.id_empleado_encargado"><br>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="updatePedido()">Aceptar Pedido</button>
+        </td>
+        <td>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID_EMPLEADO</th>
+                <th scope="col">CI</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">APELLIDO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let empleado of Empleados">
+                <td>{{empleado.id}}</td>
+                <td>{{empleado.ci}}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.apellido}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,49 @@
+<div class="container my-3">
+<h2>PEDIDOS EN ESPERA</h2>
+<div class="alert alert-primary" role="alert">
+   Pedidos en espera de aprobación
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID_PEDIDO</th>
+        <th scope="col">ID_VEHICULO</th>
+        <th scope="col">SERVICIO</th>
+        <th scope="col">MONTO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of Pedidos">
+        <td>{{p.id}}</td>
+        <td>{{p.id_vehiculo}}</td>
+        <td>{{p.id_servicio}}</td>
+        <td>{{p.monto}}</td>
+      </tr>
+    </tbody>
+  </table>
+<h2>PEDIDOS APROBADOS</h2>
+<div class="alert alert-primary" role="alert">
+    Aquí apareceran tus pedidos que ya se han aprobado
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID_PEDIDO</th>
+      <th scope="col">ID_VEHICULO</th>
+      <th scope="col">SERVICIO</th>
+      <th scope="col">MONTO</th>
+      <th scope="col">TURNO(Lugar)</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let a of Aceptados">
+    <tr>
+      <td>{{a.id}}</td>
+      <td>{{a.id_vehiculo}}</td>
+      <td>{{a.id_servicio}}</td>
+      <td>{{a.monto}}</td>
+      <td>{{a.turno}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

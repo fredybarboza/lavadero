@@ -1,0 +1,42 @@
+<div class="container my-3">
+  <h4>Listado De Vehiculos</h4> 
+  <div class="alert alert-info" role="alert">
+    Si no tienes ningun vehiculo agregado ingresa <a href="/agregar-vehiculo">aquí</a>
+  </div>
+</div>
+<div class="container my-3 py-3">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">MARCA</th>
+        <th scope="col">MODELO</th>
+        <th scope="col">COLOR</th>
+        <th scope="col">CHAPA</th>
+        <th scope="col">ACCION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of Vehiculos">
+        <td>{{vehiculo.id_vehiculo}}</td>
+        <td>{{vehiculo.marca}}</td>
+        <td>{{vehiculo.modelo}}</td>
+        <td>{{vehiculo.color}}</td>
+        <td>{{vehiculo.chapa}}</td>
+        <td>
+            <a href="/pedido/{{vehiculo.id_vehiculo}}">Pedir Lavado</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
